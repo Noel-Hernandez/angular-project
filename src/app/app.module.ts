@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,10 +13,18 @@ import { StudentAddComponent } from './student-add/student-add.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StudentUpdateComponent } from './student-update/student-update.component';
 import { StudentAddValidateComponent } from './student-add-validate/student-add-validate.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 const appRoutes: Routes = [
   {
+
+    path: 'navbar',
+    component: NavbarComponent,
+    data: { title: 'Navbar' }
+  },
+  {
+
     path: 'students',
     component: StudentListComponent,
     data: { title: 'Student List' }
@@ -45,6 +54,9 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   }
 ];
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,15 +65,18 @@ const appRoutes: Routes = [
     StudentDetailComponent,
     StudentUpdateComponent,
     StudentAddValidateComponent,
+    NavbarComponent,
     
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
     FormsModule,
     ReactiveFormsModule, 
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

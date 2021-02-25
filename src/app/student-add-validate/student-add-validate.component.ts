@@ -45,6 +45,10 @@ export class StudentAddValidateComponent implements OnInit {
       console.log(err);
     });
   }
+cancel(){}
+
+
+
 
   get employeeId() { return this.studentForm.get('studentId'); }
   get name() { return this.studentForm.get('name'); }
