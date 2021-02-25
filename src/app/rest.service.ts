@@ -41,11 +41,20 @@ export class RestService {
 
   addStudent (student): Observable<any> {
     console.log(student);
-    return this.http.post<any>(endpoint + 'issue/add/', JSON.stringify(student), httpOptions).pipe(
+    return this.http.post<any>(endpoint + 'student/add/', JSON.stringify(student), httpOptions).pipe(
       tap((student) => console.log('added student')),
       catchError(this.handleError<any>('addStudent'))
     );
   }
+
+  addIssue (issue): Observable<any> {
+    console.log(issue);
+    return this.http.post<any>(endpoint + 'issue/add/', JSON.stringify(issue), httpOptions).pipe(
+      tap((issue) => console.log('added issue')),
+      catchError(this.handleError<any>('addIssue'))
+    );
+  }
+
 
   deleteStudent (id): Observable<any> {
     return this.http.delete<any>(endpoint + 'student/DeleteStudent/' + id, httpOptions).pipe(

@@ -15,7 +15,6 @@ export class StudentAddValidateComponent implements OnInit {
 
    constructor(private fb: FormBuilder, private route: ActivatedRoute,
         private rest:RestService, private router: Router) {
-        
 
           this.studentForm = this.fb.group({
             studentId: 0,

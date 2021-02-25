@@ -14,6 +14,7 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 import { StudentUpdateComponent } from './student-update/student-update.component';
 import { StudentAddValidateComponent } from './student-add-validate/student-add-validate.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { IssueAddComponent } from './issue-add/issue-add.component';
 
 
 const appRoutes: Routes = [
@@ -23,6 +24,13 @@ const appRoutes: Routes = [
     component: NavbarComponent,
     data: { title: 'Navbar' }
   },
+  {
+
+    path: 'issue-add',
+    component: IssueAddComponent,
+    data: { title: 'Issue Add'}
+  },
+
   {
 
     path: 'students',
@@ -66,6 +74,7 @@ const appRoutes: Routes = [
     StudentUpdateComponent,
     StudentAddValidateComponent,
     NavbarComponent,
+    IssueAddComponent,
     
   ],
   imports: [
