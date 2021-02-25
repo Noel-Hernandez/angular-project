@@ -51,6 +51,13 @@ export class RestService {
       catchError(this.handleError<any>('getStudentById'))
       );
   }
+  getServices(): Observable<any> {
+    return this.http.get(endpoint + 'service/services').pipe(
+      map(this.extractData),
+      catchError(this.handleError<any>('getServices'))
+      );
+  }
+
 
   addStudent (student): Observable<any> {
     console.log(student);

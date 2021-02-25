@@ -48,11 +48,17 @@
       <div class="form-group row">
         <label class=" control-label col-md-12" for="service">Service</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="service">
+
+          <select [(ngModel)]="issueData.service" class="form-control">
+            <option *ngFor="let item of services" value="{{item.Service_ID}}" > {{item.Service_Name}}</option>
+          </select><br>
         </div>
         <span class="text-danger" *ngIf="issueForm.hasError('required', 'service') && formDir.submitted">
           Service displayed here.
         </span>
+
+        
+        
 
 
       </div>

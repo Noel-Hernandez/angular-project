@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RestService } from '../rest.service';
@@ -12,6 +12,13 @@ import { RestService } from '../rest.service';
 })
 export class IssueAddComponent implements OnInit {
 
+  @Input() issueData = { issueId: 0, descripcion:'', email: '', phone: '', address: '', service: 0};
+
+  services: any [];
+ 
+
+
+
 
   issueForm: FormGroup;
   errorMessage: any;
@@ -23,13 +30,13 @@ export class IssueAddComponent implements OnInit {
         descripcion: ['', [Validators.required]],
         email: ['', [Validators.required]],
         phone: ['', [Validators.required]],
-        address: ['', [Validators.required]],
-        service: ['your service', [Validators.required]],
+        address: ['', [Validators.required]]
     })
 
 }
 
   ngOnInit(): void {
+    this.loadServices();
   }
 
   addIssue() {
@@ -48,8 +55,15 @@ export class IssueAddComponent implements OnInit {
 
 
   cancel() {
-    this.router.navigate(['/students']);
+    this.router.navigate(['/app-home']);
   }
+
+  loadServices(){
+    this.rest.getServices().subscribe(data => {
+      this.services = data;
+    })
+  }
+
 
 
   get issueId() { return this.issueForm.get('issueId'); }
