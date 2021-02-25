@@ -1,0 +1,15 @@
+<div>
+    <h2>Student Update</h2>
+    <div>
+      <label>Name:
+        <input [(ngModel)]="studentData.name" placeholder="Name"/>
+      </label><br>
+      <label>Email:
+        <input [(ngModel)]="studentData.email" placeholder="Email"/>
+      </label><br>
+      <label>Password:
+        <input [(ngModel)]="studentData.password" placeholder="Password"/>
+      </label><br>
+    </div>
+    <button (click)="updateStudent()">Update</button>
+  </div>

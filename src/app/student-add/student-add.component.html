@@ -1,0 +1,42 @@
+<body>
+<h2>Student Add</h2>
+<form class="form-group">
+    
+    <div class="form-group row">
+    <label class="control-label col-md-12">Description:</label>
+    <div class="col-md-4">
+        <input class="form-control" [(ngModel)]="studentData.description" name="Description" placeholder="Name"/>
+    </div>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12">Address:</label>
+      <div class="col-md-4">
+          <input class="form-control" [(ngModel)]="studentData.address" name="Address" placeholder="Name"/>
+      </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label col-md-12">Contact:</label>
+        <div class="col-md-4">
+            <input class="form-control" [(ngModel)]="studentData.contact" name="Contact" placeholder="Contact"/>
+        </div>
+        </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12">Email:</label>
+    <div class="col-md-4">
+        <input class="form-control" [(ngModel)]="studentData.email"  name="email" placeholder="Email"/>
+     </div>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12">Status:</label>
+    <div class="col-md-4">
+        <input class="form-control" [(ngModel)]="studentData.status"  name="Status" placeholder="Ststus"/>
+     </div>
+    </div>
+  
+    <div class="form-group">
+      <button (click)="addStudent()" class="btn btn-default">Save</button>
+      <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+  
+</form>
+</body>
