@@ -20,12 +20,11 @@ export class IssueAddComponent implements OnInit {
     private rest:RestService, private router: Router) {
       this.issueForm = this.fb.group({
         issueId: 0,
-        name: ['', [Validators.required]],
+        descripcion: ['', [Validators.required]],
         email: ['', [Validators.required]],
-        password: new FormControl('', [
-          Validators.required,
-          Validators.pattern('^[0-9]{5,8}$')
-        ])
+        phone: ['', [Validators.required]],
+        address: ['', [Validators.required]],
+        service: ['your service', [Validators.required]],
     })
 
 }
@@ -49,14 +48,15 @@ export class IssueAddComponent implements OnInit {
 
 
   cancel() {
-    this.router.navigate(['/issues']);
+    this.router.navigate(['/students']);
   }
 
 
-  get employeeId() { return this.issueForm.get('studentId'); }
-  get name() { return this.issueForm.get('name'); }
+  get issueId() { return this.issueForm.get('issueId'); }
+  get descripcion() { return this.issueForm.get('descripcion'); }
   get email() { return this.issueForm.get('email'); }
-  get password() { return this.issueForm.get('password'); }
-
+  get phone() { return this.issueForm.get('phone'); }
+  get address() { return this.issueForm.get('address'); }
+  get service() { return this.issueForm.get('service'); }
 
 }

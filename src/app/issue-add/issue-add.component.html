@@ -2,14 +2,26 @@
 <form [formGroup]="issueForm" (ngSubmit)="addIssue()" #formDir="ngForm">
     <div class="form-group row">
     
-        <label class=" control-label col-md-12" for="name">Name</label>
+        <label class=" control-label col-md-12" for="descripcion">Descripcion</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="name">
+          <input class="form-control" type="text" formControlName="descripcion">
         </div>
-        <span class="text-danger" *ngIf="issueForm.hasError('required', 'name') && formDir.submitted">
-          Name is required.
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'descripcion') && formDir.submitted">
+            Descripcion is required.
         </span>
       </div>
+
+      <div class="form-group row">
+    
+        <label class=" control-label col-md-12" for="phone">Phone</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="phone">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'phone') && formDir.submitted">
+          Phone is required.
+        </span>
+      </div>
+
 
       <div class="form-group row">
     
@@ -23,16 +35,23 @@
       </div>
 
       <div class="form-group row">
-        <label class=" control-label col-md-12" for="age">Password</label>
+    
+        <label class=" control-label col-md-12" for="address">Address</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="password">
+          <input class="form-control" type="text" formControlName="address">
         </div>
-        <span class="text-danger" *ngIf="issueForm.hasError('required', 'password') && formDir.submitted">
-          Password is required.
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'address') && formDir.submitted">
+          An Address is required.
         </span>
-       
-        <span class="text-danger" *ngIf="issueForm.hasError('pattern', 'password') && formDir.submitted">
-            Minimum 5 digits and maximum 8
+      </div>
+
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="service">Service</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="service">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'service') && formDir.submitted">
+          Service displayed here.
         </span>
 
 
