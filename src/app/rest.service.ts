@@ -26,12 +26,25 @@ export class RestService {
   }
 
   getStudents(): Observable<any> {
-    return this.http.get(endpoint + 'issue/issues').pipe(
+    return this.http.get(endpoint + 'student/students').pipe(
       map(this.extractData),
       catchError(this.handleError<any>('getStudents'))
       );
   }
 
+  getIssues(): Observable<any> {
+    return this.http.get(endpoint + 'issue/issues').pipe(
+      map(this.extractData),
+      catchError(this.handleError<any>('getIssues'))
+      );
+  }
+
+  getIssue(id): Observable<any> {
+    return this.http.get(endpoint + 'isssue/GetIssue/' + id).pipe(
+      map(this.extractData),
+      catchError(this.handleError<any>('getIssueById'))
+      );
+  }
   getStudent(id): Observable<any> {
     return this.http.get(endpoint + 'student/GetStudent/' + id).pipe(
       map(this.extractData),
@@ -62,6 +75,18 @@ export class RestService {
       catchError(this.handleError<any>('deletestudents'))
     );
   }
+  
+  deleteIssue (id): Observable<any> {
+    return this.http.delete<any>(endpoint + 'issue/DeleteIssue/' + id, httpOptions).pipe(
+      tap(_ => console.log(`deleted issue id=${id}`)),
+      catchError(this.handleError<any>('deleteissues'))
+    );
+  }
+
+
+
+
+
 
   updateStudent (student): Observable<any> {
     return this.http.put(endpoint + 'student/PutStudent/' + student.studentId, JSON.stringify(student), httpOptions).pipe(

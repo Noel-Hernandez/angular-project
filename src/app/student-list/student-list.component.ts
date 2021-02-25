@@ -13,7 +13,7 @@ export class StudentListComponent implements OnInit {
 
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
-
+  
   ngOnInit() {
 
     this.getStudents();

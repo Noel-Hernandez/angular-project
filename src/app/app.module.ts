@@ -15,6 +15,9 @@ import { StudentUpdateComponent } from './student-update/student-update.componen
 import { StudentAddValidateComponent } from './student-add-validate/student-add-validate.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IssueAddComponent } from './issue-add/issue-add.component';
+import { IssueListComponent } from './issue-list/issue-list.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 const appRoutes: Routes = [
@@ -26,11 +29,24 @@ const appRoutes: Routes = [
   },
   {
 
+    path: 'app-home',
+    component: HomeComponent,
+    data: { title: 'Home' }
+  },
+
+
+  {
+
     path: 'issue-add',
     component: IssueAddComponent,
     data: { title: 'Issue Add'}
   },
+  {
 
+    path: 'issue-list',
+    component: IssueListComponent,
+    data: { title: 'Issue List'}
+  },
   {
 
     path: 'students',
@@ -58,7 +74,7 @@ const appRoutes: Routes = [
     data: { title: 'Student Add Validate' }
   },
   { path: '',
-    redirectTo: '/students',
+    redirectTo: '/app-home',
     pathMatch: 'full'
   }
 ];
@@ -75,6 +91,8 @@ const appRoutes: Routes = [
     StudentAddValidateComponent,
     NavbarComponent,
     IssueAddComponent,
+    IssueListComponent,
+    HomeComponent,
     
   ],
   imports: [

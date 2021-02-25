@@ -1,0 +1,40 @@
+<h2>Issues List</h2>
+
+<div>
+  <button (click)="add()">
+    Add
+  </button>
+</div>
+
+<table class='table' *ngIf="issues">
+<thead>
+  <tr>
+    <th>IssueID</th>
+    <th>description</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
+
+</thead>
+<tbody>
+
+  <tr *ngFor="let s of issues; let i=index;">
+
+    <td>{{ s.ReportNumber  }}</td>
+    <td>{{ s.description  }}</td>
+    <td>{{ s.email  }}</td>
+    <td>{{ s.phone  }}</td>
+    <td>{{ s.address  }}</td>
+
+    <td>
+    <!-- 
+      <a [routerLink]="['/student-detail/', s.studentId]"> Detail </a>
+      <a [routerLink]="['/student-update/', s.studentId]"> Edit </a>
+      --> 
+      <a [routerLink]="" (click)="delete(s.ReportNumber)"> Delete </a>
+  
+    </td>
+    </tr>
+
+</tbody>
