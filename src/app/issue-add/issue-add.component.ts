@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { data } from 'jquery';
 import { RestService } from '../rest.service';
 
 
@@ -27,10 +28,16 @@ export class IssueAddComponent implements OnInit {
         phone: ['', [Validators.required]],
         address: ['', [Validators.required]],
         Id: ['', [Validators.required]],
-        service:this.issueData.service
+        service:['']
                           
     })
 
+}
+
+
+ // Getter method to access formcontrols
+ get service() {
+  return this.issueForm.get('service');
 }
 
   ngOnInit(): void {

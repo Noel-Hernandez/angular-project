@@ -21,8 +21,6 @@ export class IssueListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getIssues();
-
-
   }
 
   getIssues() {
