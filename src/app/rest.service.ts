@@ -71,7 +71,7 @@ export class RestService {
 
     try {
       console.log(issue);
-    return this.http.post<any>(endpoint + 'issue/adding', JSON.stringify(issue), httpOptions).pipe(
+    return this.http.post<any>(endpoint + 'issue/adding/', JSON.stringify(issue), httpOptions).pipe(
       tap((issue) => console.log('added issue')),
       
     );

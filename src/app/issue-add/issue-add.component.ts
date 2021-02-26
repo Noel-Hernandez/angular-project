@@ -16,11 +16,12 @@ export class IssueAddComponent implements OnInit {
   @Input() issueData = { issueId: 0, descripcion:'', email: '', phone: '', address: '',Id:0, service: 0,time:''};
 
   services: any [];
-  issueForm: FormGroup;
+  //issueForm: FormGroup;
   errorMessage: any;
-  idS:0;
+  
   constructor(private fb: FormBuilder, private route: ActivatedRoute,
     private rest:RestService, private router: Router) {
+      /*
       this.issueForm = this.fb.group ({
         issueId: 0,
         descripcion: ['', [Validators.required]],
@@ -31,21 +32,21 @@ export class IssueAddComponent implements OnInit {
         service:[2,[Validators.required]],
         time:['']                  
     })
-
+*/
 }
 
-
+/*
  // Getter method to access formcontrols
  get service() {
   return this.issueForm.get('service');
 }
-
+*/
   ngOnInit(): void {
     this.loadServices();
   }
 
   addIssue() {
-    this.rest.addIssue(this.issueForm.value).subscribe((result) => {
+    this.rest.addIssue(this.issueData).subscribe((result) => {
       this.router.navigate(['/app-issue-list']);
     }, (err) => {
       console.log(err);
@@ -65,7 +66,7 @@ export class IssueAddComponent implements OnInit {
   }
 
 
-
+/*
   get issueId() { return this.issueForm.get('issueId'); }
   get descripcion() { return this.issueForm.get('descripcion'); }
   get email() { return this.issueForm.get('email'); }
@@ -74,5 +75,5 @@ export class IssueAddComponent implements OnInit {
   //get service() { return this.issueForm.get('service'); }
   get Id(){ return this.issueForm.get('Id'); }
   get time(){ return this.issueForm.get('time'); }
-
+*/
 }
