@@ -12,7 +12,7 @@ import { RestService } from '../rest.service';
 })
 export class IssueAddComponent implements OnInit {
 
-  @Input() issueData = { issueId: 0, descripcion:'', email: '', phone: '', address: '', service: 0};
+  @Input() issueData = { issueId: 0, descripcion:'', email: '', phone: '', address: '',Id:0, service: 0};
 
   services: any [];
  
@@ -30,7 +30,8 @@ export class IssueAddComponent implements OnInit {
         descripcion: ['', [Validators.required]],
         email: ['', [Validators.required]],
         phone: ['', [Validators.required]],
-        address: ['', [Validators.required]]
+        address: ['', [Validators.required]],
+        Id: ['', [Validators.required]]
     })
 
 }
@@ -72,5 +73,5 @@ export class IssueAddComponent implements OnInit {
   get phone() { return this.issueForm.get('phone'); }
   get address() { return this.issueForm.get('address'); }
   get service() { return this.issueForm.get('service'); }
-
+  get Id(){ return this.issueForm.get('Id'); }
 }
