@@ -26,8 +26,7 @@ export class IssueAddComponent implements OnInit {
         email: ['', [Validators.required]],
         phone: ['', [Validators.required]],
         address: ['', [Validators.required]],
-        Id: ['', [Validators.required]],
-        service:[['',]]
+        Id: ['', [Validators.required]]
 
     })
 
@@ -64,7 +63,7 @@ export class IssueAddComponent implements OnInit {
   get email() { return this.issueForm.get('email'); }
   get phone() { return this.issueForm.get('phone'); }
   get address() { return this.issueForm.get('address'); }
-  get service() { return this.issueForm.get('service'); }
+  //get service() { return this.issueForm.get('service'); }
   get Id(){ return this.issueForm.get('Id'); }
 
 }

@@ -67,7 +67,7 @@
         <div class="col-md-4">
 
           <select [(ngModel)]="issueData.service" class="form-control" [ngModelOptions]="{standalone: true}">
-            <option *ngFor="let item of services" value="{{item.IdS}}" > {{item.serviceName}}</option>
+            <option *ngFor="let item of services" value="{{item.idS}}" > {{item.serviceName}}</option>
           </select><br>
         </div>
         <span class="text-danger" *ngIf="issueForm.hasError('required', 'service') && formDir.submitted">
