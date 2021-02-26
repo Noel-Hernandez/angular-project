@@ -42,9 +42,7 @@ export class IssueAddComponent implements OnInit {
     if (!this.issueForm.valid) {
       return;
     }
-
-
-    this.rest.addIssue(this.issueForm).subscribe((result) => {
+    this.rest.addIssue(this.issueForm).subscribe(() => {
       this.router.navigate(['/issues']);
     }, (err) => {
       console.log(err);
