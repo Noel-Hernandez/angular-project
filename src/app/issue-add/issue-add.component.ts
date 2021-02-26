@@ -42,11 +42,7 @@ export class IssueAddComponent implements OnInit {
 
   addIssue() {
 
-    if (!this.issueForm.valid) {
-      return;
-    }
-
-    this.rest.addIssue(this.issueForm.value).subscribe((result) => {
+    this.rest.addIssue(this.issueForm).subscribe((result) => {
       this.router.navigate(['/issues']);
     }, (err) => {
       console.log(err);
@@ -66,7 +62,7 @@ export class IssueAddComponent implements OnInit {
   }
 
 
-
+/*
   get issueId() { return this.issueForm.get('issueId'); }
   get descripcion() { return this.issueForm.get('descripcion'); }
   get email() { return this.issueForm.get('email'); }
@@ -74,4 +70,5 @@ export class IssueAddComponent implements OnInit {
   get address() { return this.issueForm.get('address'); }
   get service() { return this.issueForm.get('service'); }
   get Id(){ return this.issueForm.get('Id'); }
+  */
 }
