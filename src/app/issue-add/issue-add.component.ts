@@ -20,14 +20,15 @@ export class IssueAddComponent implements OnInit {
   
   constructor(private fb: FormBuilder, private route: ActivatedRoute,
     private rest:RestService, private router: Router) {
-      this.issueForm = this.fb.group({
+      this.issueForm = this.fb.group ({
         issueId: 0,
         descripcion: ['', [Validators.required]],
         email: ['', [Validators.required]],
         phone: ['', [Validators.required]],
         address: ['', [Validators.required]],
         Id: ['', [Validators.required]],
-        service:[[,]]
+        service:[['',]]
+
     })
 
 }

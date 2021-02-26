@@ -1,5 +1,5 @@
 <h2>Issue Add (With Validations) </h2>
-<form [formGroup]="issueForm" (ngSubmit)="addIssue()" #formDir="ngForm">
+<form [formGroup]="issueForm" (ngSubmit)="addIssue()" #formDir="ngForm" >
     <div class="form-group row">
     
         <label class=" control-label col-md-12" for="descripcion">Descripcion</label>
@@ -66,7 +66,7 @@
         <label class=" control-label col-md-12" for="service">Service</label>
         <div class="col-md-4">
 
-          <select [(ngModel)]="issueData.service" class="form-control">
+          <select [(ngModel)]="issueData.service" class="form-control" [ngModelOptions]="{standalone: true}">
             <option *ngFor="let item of services" value="{{item.IdS}}" > {{item.serviceName}}</option>
           </select><br>
         </div>
@@ -85,3 +85,5 @@
         <button class="btn" (click)="cancel()">Cancel</button>
       </div>
 </form>
+
+
