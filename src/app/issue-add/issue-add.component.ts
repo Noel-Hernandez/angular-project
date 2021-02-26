@@ -28,7 +28,7 @@ export class IssueAddComponent implements OnInit {
         phone: ['', [Validators.required]],
         address: ['', [Validators.required]],
         Id: ['', [Validators.required]],
-        service:['']
+        service:[2,[Validators.required]]
                           
     })
 
