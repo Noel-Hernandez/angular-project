@@ -52,7 +52,7 @@ export class RestService {
       );
   }
   getServices(): Observable<any> {
-    return this.http.get(endpoint + 'service/services').pipe(
+    return this.http.get(endpoint +'service/services').pipe(
       map(this.extractData),
       catchError(this.handleError<any>('getServices'))
       );
@@ -69,7 +69,7 @@ export class RestService {
 
   addIssue (issue): Observable<any> {
     console.log(issue);
-    return this.http.post<any>(endpoint + 'issue/add/', JSON.stringify(issue), httpOptions).pipe(
+    return this.http.post<any>(endpoint + 'issue/adding/', JSON.stringify(issue), httpOptions).pipe(
       tap((issue) => console.log('added issue')),
       catchError(this.handleError<any>('addIssue'))
     );
