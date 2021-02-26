@@ -67,18 +67,12 @@ export class RestService {
     );
   }
 
-  addIssue (issue): Observable<any> {
-
-    try {
+  addIssue (issue): Observable<any> {   
       console.log(issue);
     return this.http.post<any>(endpoint + 'issue/adding/', JSON.stringify(issue), httpOptions).pipe(
       tap((issue) => console.log('added issue')),
-      
-    );
-    } catch (error) {
       catchError(this.handleError<any>('addIssue'))
-    }
-    
+    );
   }
   
 /*

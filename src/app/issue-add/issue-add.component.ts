@@ -13,14 +13,13 @@ import { RestService } from '../rest.service';
 })
 export class IssueAddComponent implements OnInit {
 
-  @Input() issueData = { issueId: 0, descripcion:'', email: '', phone: '', address: '',Id:0, service: 0,time:''};
+  @Input() issueData = { issueId: 0, descripcion:'',time:'' , address: '', phone: '',email: '',reportStatus:'' ,Id:0, service: 0};
 
   services: any [];
   //issueForm: FormGroup;
   errorMessage: any;
   
-  constructor(private fb: FormBuilder, private route: ActivatedRoute,
-    private rest:RestService, private router: Router) {
+  constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) {
       /*
       this.issueForm = this.fb.group ({
         issueId: 0,
@@ -47,7 +46,7 @@ export class IssueAddComponent implements OnInit {
 
   addIssue() {
     this.rest.addIssue(this.issueData).subscribe((result) => {
-      this.router.navigate(['/app-issue-list']);
+      this.router.navigate(['/issue-list']);
     }, (err) => {
       console.log(err);
     });

@@ -60,19 +60,27 @@
 
       <div class="form-group row">
     
-        <label class=" control-label col-md-12" for="Id">Time</label>
+        <label class=" control-label col-md-12" for="time">Time</label>
         <div class="col-md-4">
           <input class="form-control" type="text" [(ngModel)]="issueData.time" placeholder="La Hora local">
         </div>
       
       </div>
 
+      <div class="form-group row">
+    
+        <label class=" control-label col-md-12" for="reportStatus">Report Status</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" [(ngModel)]="issueData.reportStatus" placeholder="">
+        </div>
+      
+      </div>
 
 
 
   
       <div class="form-group">
-        <button type="submit" (click)="addIssue()" class="btn btn-primary col-3">Save</button>
+        <button (click)="addIssue()" class="btn btn-primary col-3">Save</button>
         <button class="btn" (click)="cancel()">Cancel</button>
       </div>
 
