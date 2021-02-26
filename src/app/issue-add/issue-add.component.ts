@@ -15,11 +15,6 @@ export class IssueAddComponent implements OnInit {
   @Input() issueData = { issueId: 0, descripcion:'', email: '', phone: '', address: '',Id:0, service: 0};
 
   services: any [];
- 
-
-
-
-
   issueForm: FormGroup;
   errorMessage: any;
   
@@ -31,7 +26,8 @@ export class IssueAddComponent implements OnInit {
         email: ['', [Validators.required]],
         phone: ['', [Validators.required]],
         address: ['', [Validators.required]],
-        Id: ['', [Validators.required]]
+        Id: ['', [Validators.required]],
+        service:[[,]]
     })
 
 }
@@ -41,6 +37,11 @@ export class IssueAddComponent implements OnInit {
   }
 
   addIssue() {
+
+    if (!this.issueForm.valid) {
+      return;
+    }
+
 
     this.rest.addIssue(this.issueForm).subscribe((result) => {
       this.router.navigate(['/issues']);
@@ -62,7 +63,7 @@ export class IssueAddComponent implements OnInit {
   }
 
 
-/*
+
   get issueId() { return this.issueForm.get('issueId'); }
   get descripcion() { return this.issueForm.get('descripcion'); }
   get email() { return this.issueForm.get('email'); }
@@ -70,5 +71,5 @@ export class IssueAddComponent implements OnInit {
   get address() { return this.issueForm.get('address'); }
   get service() { return this.issueForm.get('service'); }
   get Id(){ return this.issueForm.get('Id'); }
-  */
+
 }
