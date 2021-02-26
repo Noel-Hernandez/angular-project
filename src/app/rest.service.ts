@@ -74,6 +74,17 @@ export class RestService {
       catchError(this.handleError<any>('addIssue'))
     );
   }
+  
+/*
+  addIssueNet (issue): Observable<any> {
+    console.log(issue);
+    return this.http.post<any>(endpoint + 'issue/add/', JSON.stringify(issue), httpOptions).pipe(
+      tap((issue) => console.log('added issue')),
+      catchError(this.handleError<any>('addIssue'))
+    );
+  }
+*/
+
 
 
   deleteStudent (id): Observable<any> {
