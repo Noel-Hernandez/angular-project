@@ -28,7 +28,7 @@ export class IssueAddComponent implements OnInit {
         address: ['', [Validators.required]],
         Id: ['', [Validators.required]],
         service:this.fb.array([
-        this.fb.control('')
+        this.issueData.service
 
         ])
                           
