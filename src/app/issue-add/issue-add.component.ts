@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RestService } from '../rest.service';
 
@@ -17,7 +17,7 @@ export class IssueAddComponent implements OnInit {
   services: any [];
   issueForm: FormGroup;
   errorMessage: any;
-  
+  idS:0;
   constructor(private fb: FormBuilder, private route: ActivatedRoute,
     private rest:RestService, private router: Router) {
       this.issueForm = this.fb.group ({
@@ -26,8 +26,12 @@ export class IssueAddComponent implements OnInit {
         email: ['', [Validators.required]],
         phone: ['', [Validators.required]],
         address: ['', [Validators.required]],
-        Id: ['', [Validators.required]]
+        Id: ['', [Validators.required]],
+        service:this.fb.array([
+        this.fb.control('')
 
+        ])
+                          
     })
 
 }
