@@ -4,7 +4,7 @@
     
         <label class=" control-label col-md-12" for="descripcion">Descripcion</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="descripcion">
+          <input class="form-control" type="text" [(ngModel)]="issueData.descripcion" placeholder="descripcion">
         </div>
         
       </div>
@@ -13,7 +13,7 @@
     
         <label class=" control-label col-md-12" for="phone">Phone</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="phone">
+          <input class="form-control" type="text" [(ngModel)]="issueData.phone" placeholder="phone">
         </div>
         
       </div>
@@ -23,7 +23,7 @@
     
         <label class=" control-label col-md-12" for="email">Email</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="email">
+          <input class="form-control" type="text" [(ngModel)]="issueData.email" placeholder="email">
         </div>
         
       </div>
@@ -32,7 +32,7 @@
     
         <label class=" control-label col-md-12" for="address">Address</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="address">
+          <input class="form-control" type="text" [(ngModel)]="issueData.address" placeholder="address">
         </div>
  
       </div>
@@ -42,7 +42,7 @@
     
         <label class=" control-label col-md-12" for="Id">Client ID</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="Id" placeholder="Digite su ID aqui">
+          <input class="form-control" type="text" [(ngModel)]="issueData.Id" placeholder="Digite su ID aqui">
         </div>
       
       </div>
@@ -57,6 +57,19 @@
         </div>
  
       </div>
+
+      <div class="form-group row">
+    
+        <label class=" control-label col-md-12" for="Id">Time</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" [(ngModel)]="issueData.time" placeholder="La Hora local">
+        </div>
+      
+      </div>
+
+
+
+
   
       <div class="form-group">
         <button type="submit" (click)="addIssue()" class="btn btn-primary col-3">Save</button>
